@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Ejercicio 2</title>
+
+    <style>
+        div {
+            border: 1px solid black;
+            margin: 1px;
+            padding: 5px;
+
+        }
+    </style>
+
+    <script type="text/javascript">
+        function cuentaTotal() {
+            var total = 12000
+
+            //Apartado Motor
+            if (document.form.motor[0].checked)
+                total = total + parseInt(document.form.motor[0].value);
+            else if (document.form.motor[1].checked)
+                total = total + parseInt(document.form.motor[1].value);
+            else if (document.form.motor[2].checked)
+                total = total + parseInt(document.form.motor[2].value);
+ 
+            //Apartado Puertas
+            //Control Solo Gasolina
+            if (document.form.puertas[0].checked) {
+                if (document.form.motor[0].checked)
+                    total = total + parseInt(document.form.puertas[0].value);
+                else {
+                    alert("Solo puede ser modelo 3 puertas con motor gasolina");
+                    return 0;
+                }
+            } 
+            else if (document.form.puertas[1].checked)
+                total = total + parseInt(document.form.puertas[1].value);
+            else if (document.form.puertas[2].checked)
+                total = total + parseInt(document.form.puertas[2].value);
+
+            //Apartado Pintura
+            if (document.form.pintura[0].checked)
+                total = total + parseInt(document.form.pintura[0].value);
+            else if (document.form.pintura[1].checked)
+                total = total + parseInt(document.form.pintura[1].value);
+            else if (document.form.pintura[2].checked)
+                total = total + parseInt(document.form.pintura[2].value);
+            else if (document.form.pintura[3].checked)
+                total = total + parseInt(document.form.pintura[3].value);
+            else if (document.form.pintura[4].checked)
+                total = total + parseInt(document.form.pintura[4].value);
+
+            //Extras
+            //Control Color
+            if(document.form.v1.checked) {
+                if (document.form.pintura[0].checked || document.form.pintura[1].checked || document.form.pintura[2].checked)
+                    total = total + parseInt(document.form.v1.value);
+                else {
+                    alert("Solo puede ser pintura metalizada con color rojo, verde o naranja");
+                    return 0;
+                }
+            }
+            if(document.form.v2.checked)
+                total = total + parseInt(document.form.v2.value);
+            if(document.form.v3.checked)
+                total = total + parseInt(document.form.v3.value);
+            if(document.form.v4.checked)
+                total = total + parseInt(document.form.v4.value);
+            //Control Modelo Familiar
+            if(document.form.v5.checked){
+                if(document.form.puertas[2].checked)
+                    total = total + parseInt(document.form.v5.value);
+                else {
+                    alert("Solo puede incluir DVD con modelo familiar");
+                    return 0;
+                }
+            }
+
+            //Devolviendo el valor total
+            alert("El total de valor del coche que usted ha seleccionado es: " + total + "€");
+        }
+    </script>
+
+</head>
+
+<body>
+    <form name="form">
+        <div>
+            Configuración del coche
+        </div>
+        <div>
+            Tipo de Motor
+            <br>
+            <input type="radio" name="motor" value="0"/>Gasolina
+            <input type="radio" name="motor" value="1500"/>Diesel (+1500€) <input type="radio" name="motor" value="3000"/>Hibrido (+3000€)
+        </div>
+        <div>
+            Tipo de Puertas
+            <br>
+            <input type="radio" name="puertas" value="-2000"/>3 Puertas (-2000€)(Solo con Gasolina)
+            <input type="radio" name="puertas" value="0"/>5 Puertas
+            <input type="radio" name="puertas" value="1500"/>Familiar (+1500€)
+        </div>
+        <div>
+            Tipo de Pintura
+            <br>
+            <input type="radio" name="pintura" value="0"/>Rojo
+            <input type="radio" name="pintura" value="0"/>Verde
+            <input type="radio" name="pintura" value="0"/>Naranja
+            <input type="radio" name="pintura" value="-500"/>Blanco (-500€)
+            <input type="radio" name="pintura" value="-600"/>Negro (-600€)
+        </div>
+        <div>
+            Selecciona los extras que deseas:
+            <br>
+            <input type="checkbox" name="v1" value="750">Metalizada (+750€)(Solo Rojo, Verde o Naranja)<br>
+            <input type="checkbox" name="v2" value="200">LLantas (+200€)<br>
+            <input type="checkbox" name="v3" value="800">Climatizador (+800€)<br>
+            <input type="checkbox" name="v4" value="340">GPS (+340€)<br>
+            <input type="checkbox" name="v5" value="800">DVD (+800€)(Solo modelo Familiar)<br>
+        </div>
+        <div>
+            Total a Cobrar
+            <br>
+            <input type="button" value="Calcular" onClick="cuentaTotal()">
+        </div>
+    </form>
+</body>
+
+</html>

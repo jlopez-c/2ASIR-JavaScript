@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Ejercicio 3</title>
+
+    <style>
+        body {
+            background: rgb(243, 243, 243);
+        }
+
+        div {
+            border: 1px solid black;
+            margin: 1px;
+            padding: 5px;
+            background-color: rgba(224, 232, 255, 0.734);
+
+        }
+    </style>
+
+    <script type="text/javascript">
+        function countNota() {
+            var nota = 0;
+
+            //Pregunta 1
+            if (document.form.p1[0].checked)
+            {
+                nota = nota + parseFloat(document.form.p1[0].value);
+                document.getElementById("1a").style.color="green";
+                document.getElementById("1b").style.color="black";
+                document.getElementById("1c").style.color="black";
+            }
+            else if (document.form.p1[1].checked)
+            {
+                nota = nota + parseFloat(document.form.p1[1].value);
+                document.getElementById("1a").style.color="black";
+                document.getElementById("1b").style.color="red";
+                document.getElementById("1c").style.color="black";
+            }
+            else if (document.form.p1[2].checked)
+            {
+                nota = nota + parseFloat(document.form.p1[2].value);
+                document.getElementById("1a").style.color="black";
+                document.getElementById("1b").style.color="black";
+                document.getElementById("1c").style.color="red";
+            }
+
+            //Pregunta 2
+            if (document.form.p2[0].checked)
+            {
+                nota = nota + parseFloat(document.form.p2[0].value);
+                document.getElementById("2a").style.color="red";
+                document.getElementById("2b").style.color="black";
+                document.getElementById("2c").style.color="black";
+            }
+            else if (document.form.p2[1].checked)
+            {
+                nota = nota + parseFloat(document.form.p2[1].value);
+                document.getElementById("2a").style.color="black";
+                document.getElementById("2b").style.color="red";
+                document.getElementById("2c").style.color="black";
+            }
+            else if (document.form.p2[2].checked)
+            {
+                nota = nota + parseFloat(document.form.p2[2].value);
+                document.getElementById("2a").style.color="black";
+                document.getElementById("2b").style.color="black";
+                document.getElementById("2c").style.color="green";
+            }
+
+            //Pregunta 3
+            if (document.form.p3[0].checked)
+            {
+                nota = nota + parseFloat(document.form.p3[0].value);
+                document.getElementById("3a").style.color="red";
+                document.getElementById("3b").style.color="black";
+                document.getElementById("3c").style.color="black";
+            }
+            else if (document.form.p3[1].checked)
+            {
+                nota = nota + parseFloat(document.form.p3[1].value);
+                document.getElementById("3a").style.color="black";
+                document.getElementById("3b").style.color="green";
+                document.getElementById("3c").style.color="black";
+            }
+            else if (document.form.p3[2].checked)
+            {
+                nota = nota + parseFloat(document.form.p3[2].value);
+                document.getElementById("3a").style.color="black";
+                document.getElementById("3b").style.color="black";
+                document.getElementById("3c").style.color="red";
+            }
+
+            alert("Tu nota es: " + nota)
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <form name="form">
+        <div>
+            <!-- Pregunta 1 -->
+            Un administrador está configurando OSPF de área única en un router. Una de las redes que debe anunciarse es 172.16.91.0 255.255.255.192. ¿Qué máscara wildcard usaría el administrador en la declaración de red OSPF?
+            <br>
+            <input type="radio" name="p1" value="0.75"/><span  id="1a">a. 0.0.0.63</span> 
+            <br>
+            <input type="radio" name="p1" value="-0.25"/><span id="1b">b. 0.0.7.255</span>
+            <br>
+            <input type="radio" name="p1" value="-0.25"/><span  id="1c">c.  0.0.31.255</span>
+        </div>
+        <br>
+        <div>
+            <!-- Pregunta 2 -->
+            ¿Qué tipo de tráfico se describe que requiere que la latencia no supere los 400 milisegundos (ms)?
+            <br>
+            <input type="radio" name="p2" value="-0.25"/><span  id="2a">a. Datos</span> 
+            <br>
+            <input type="radio" name="p2" value="-0.25"/><span  id="2b">b. Voz</span> 
+            <br>
+            <input type="radio" name="p2" value="0.75"/><span  id="2c">c. Video</span> 
+        </div>
+        <br>
+        <div>
+            <!-- Pregunta 3 -->
+            ¿En qué estado de OSPF se lleva a cabo la elección de DR/BDR?
+            <br>
+            <input type="radio" name="p3" value="-0.25"/><span  id="3a">a. Init</span> 
+            <br>
+            <input type="radio" name="p3" value="0.75"/><span  id="3b">b. Two-Way</span> 
+            <br>
+            <input type="radio" name="p3" value="-0.25"/><span  id="3c">c. Exchange</span> 
+        </div>
+            <br>
+            <input type="button" value="Evaluar" onClick="countNota()">
+    </form>
+</body>
+
+</html>

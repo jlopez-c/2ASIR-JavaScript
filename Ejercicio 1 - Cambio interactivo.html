@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Ejercicio 1</title>
+
+    <style>
+        #div1 {
+            width: 250px;
+            height: 250px;
+            background-color: red;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function change_text() {
+            var new_text = prompt("Introduzca aquí el nuevo texto");
+            document.getElementById("div1").innerHTML = new_text;
+        }
+
+        function change_color() {
+            var new_color = prompt("Indica el color que quieres colocar");
+            document.getElementById("div1").style.backgroundColor = new_color;
+        }
+
+        function change_type() {
+            var new_type= prompt("Indica el tipo de letra que quieres poner");
+            var new_color = prompt("Indica el color que quieres colocar");
+            document.getElementById("div1").style.fontFamily = new_type;
+            document.getElementById("div1").style.color = new_color;
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="div1">
+        Este es el contenido del div1
+    </div>
+    <input type="button" value="Cambiar texto" onclick="change_text()"/>
+    <br>
+    <input type="button" value="Cambiar color de fondo" onclick="change_color()"/>
+    <br>
+    <input type="button" value="Cambiar tipo y color de letra" onclick="change_type()"/>
+</body>
+
+</html>

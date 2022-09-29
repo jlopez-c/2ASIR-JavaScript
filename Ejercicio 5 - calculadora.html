@@ -1,0 +1,86 @@
+ <!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Ejercicio 5</title>
+
+    <style>
+        body {
+            background: rgb(243, 243, 243);
+        }
+        div.calculadora {
+            border: 5px solid black;
+            width: 150px;
+            background-color: rgb(104, 189, 104);
+        }
+        div.calculo {
+            border: 2px solid black;
+            background-color: azure;
+            height: 20px;
+        }
+        input {
+            margin: 2px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var total = "";
+
+        function calcular(valor) {
+            if (valor == "+" || valor == "-" || valor == "*" || valor == "/"){
+                if (!total == "")
+                    total += valor;
+            } else
+                total += parseInt(valor);
+            document.getElementById("resultado").innerHTML = total;
+        }
+
+        function borrar() {
+            document.getElementById("resultado").innerHTML = '';
+            total = "";
+        }
+
+        function igual() {
+            //Se ha buscado la funcion eval() en internet ya que no he sido capaz de sacar la logica necesaria para realizar el calculo recogido en la variable total, y esta funcion precisamente es lo que hace.
+            var final = eval(total);
+            document.getElementById("resultado").innerHTML = final;
+            //Con esta igualacion hacemos que aun habiendo obtenido el resultado, podemos seguir operando con el.
+            total = final;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="calculadora" name="calculadora">
+        <div class="calculo" name="calculo">
+            <span id="resultado"></span>
+        </div>
+        <div>
+            <input type="button" value="1" onClick="calcular(1)"/>
+            <input type="button" value="2" onClick="calcular(2)"/>
+            <input type="button" value="3" onClick="calcular(3)"/>
+            <input type="button" value="+" onClick="calcular('+')"/>
+        </div>
+        <div>
+            <input type="button" value="4" onClick="calcular(4)"/>
+            <input type="button" value="5" onClick="calcular(5)"/>
+            <input type="button" value="6" onClick="calcular(6)"/>
+            <input type="button" value="-" onClick="calcular('-')"/>
+        </div>
+        <div>
+            <input type="button" value="7" onClick="calcular(7)"/>
+            <input type="button" value="8" onClick="calcular(8)"/>
+            <input type="button" value="9" onClick="calcular(9)"/>
+            <input type="button" value="*" onClick="calcular('*')"/>
+        </div>
+        <div>
+            <input type="button" value="c" onClick="borrar()"/>
+            <input type="button" value="0" onClick="calcular(0)"/>
+            <input type="button" value="=" onClick="igual()"/>
+            <input type="button" value="/" onClick="calcular('/')"/>
+        </div>
+    </div>
+</body>
+
+</html>
