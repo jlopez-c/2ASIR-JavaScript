@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Formulario parte A</title>
+
+    <style>
+      body {
+        background-color: rgb(211, 211, 211);
+      }
+    </style>
+
+  </head>
+<body>
+  <fieldset>
+		<legend>Feedback Form</legend>
+			<p>Name: <input type="text" name="name" max="25" size="20"/></p>
+      <p>E-mail: <input type="email" name="email" max="50"size="35" placeholder="@"/></p>
+      <p>Phone: <input type="text" name="phone" max="9" size="20"/></p>
+      <p>Callback on: <input type="date" name="date"/><input type="time" name="time"/>UTC</p>
+      <p>Priority: <input type="range" name="priority" min="1" max="5" value="1"/></p>
+      <p class="boton">
+        <input type="submit" value="Request Call"/>
+      </p>
+	</fieldset>
+</body>
+</html>

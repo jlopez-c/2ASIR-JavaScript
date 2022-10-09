@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Formulario parte A</title>
+
+    <style>
+
+      body {
+        background-color: rgb(211, 211, 211);
+      }
+
+      fieldset{
+        width: 70em;
+      }
+
+      div {
+        width: 20em;
+        float: left;
+        margin: 5px;
+      }
+
+      .botones {
+        float: right;
+      }
+
+      .rojo {
+        color: red;
+        text-decoration: underline;
+      }
+
+
+    </style>
+
+  </head>
+<body>
+  <fieldset>
+		<legend>Datos personales</legend>
+      <div><span class="rojo">A</span>pellidos: <input type="text" name="apellidos" max="50" size="30"/></div>
+			<div>N<span class="rojo">o</span>mbre: <input type="text" name="nombre" max="25"/></div>
+			<div><span class="rojo">D</span>NI: <input type="text" name="DNI" max="9"/></div>
+      <div><span class="rojo">N</span>acido en: <input type="text" name="nacido en" max="30"/></div>
+			<div>Provincia:
+				<select name="provincia">
+					<option>Valencia</option>
+					<option>Madrid</option>
+					<option>Malaga</option>
+					<option>Barcelona</option>
+				</select>
+      </div>
+			<div><span class="rojo">F</span>echa de nacimiento: <input type="text" name="fecha nacimiento" max="10" placeholder="(dd/mm/aaaa)"/></div>
+
+      <div>Do<span class="rojo">m</span>icilio:
+        <select name="domicilio_select">
+          <option>Calle</option>
+          <option>Avenida</option>
+          <option>Paseo</option>
+        </select>
+      </div>
+      <div><input type="text" name="domicilio_text" max="60" size="40"/></div>
+      <div><span class="rojo">C</span>ódigo Postal: <input type="text" name="cod_postal" max="5"/></div>
+      <div><span class="rojo">L</span>ocalidad: <input type="text" name="localidad" max="30"/></div>
+      <div>Provincia:
+        <select name="provincia_repetido">
+          <option>Valencia</option>
+          <option>Madrid</option>
+          <option>Malaga</option>
+          <option>Barcelona</option>
+        </select>
+      </div>
+      <div><span class="rojo">T</span>eléfono: <input type="text" name="telefono" max="9"/></div>
+      <div class="botones">
+				<input type="reset"	value="Borrar todo"/>
+        <input type="submit" value="Enviar"/>
+      </div>
+		</fieldset>
+
+</body>
+</html>

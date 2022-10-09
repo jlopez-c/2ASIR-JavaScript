@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Problema 1</title>
+
+    <style>
+        body {
+            background-color: rgba(107, 140, 230, 0.836);
+        }
+        div {
+            margin: 3px;
+            padding: 5px;
+        }
+        div.wrap {
+            margin-left: 35%;
+            background-color: rgba(188, 215, 255, 0.904);
+        }
+
+        div.titulo {
+            color: white;
+            background-color: rgb(48, 48, 216);
+            text-align: center;
+            font-weight: bold;
+            font-size: x-large;
+        }
+
+        span.cabecera {
+            color: darkblue;
+            font-weight: bold;
+        }
+
+        div.wrap {
+            width: 30em;
+        }
+
+        div.origen_destino {
+            height: 7em;
+        }
+
+        div.ori_des {
+            width: 10em;
+            height: 5em;
+            float: left;
+        }
+
+        div.n_personas {
+            text-align: center;
+        }
+
+
+
+        /* Estos dos hay que colocarlos bien*/
+        div.total {
+            text-align: center;
+
+        }
+
+        span.calculo {
+            border: 2px solid black;
+            background-color: azure;
+            width: 50px;
+            height: 6px;
+
+        }
+
+    </style>
+
+    <script type="text/javascript">
+
+        function calcular() {
+            var total = 0;
+            var n_personas = document.getElementById("n_personas").selectedIndex
+
+            //Comprobar errores
+            if ((!document.form.origen[0].checked && !document.form.origen[1].checked && !document.form.origen[2].checked) || (!document.form.destino[0].checked && !document.form.destino[1].checked && !document.form.destino[2].checked)) {
+                alert("Es obligatorio seleccionar el origen y el destino del vuelo")
+            }
+
+            //Origen Sevilla
+            if (document.form.origen[0].checked && document.form.destino[0].checked ||      document.form.origen[0].checked && document.form.destino[1].checked) {
+                total = 90 * n_personas;
+                document.getElementById("resultado").innerHTML = total + " € ";
+            } else if (document.form.origen[0].checked && document.form.destino[2].checked) {
+                total = 60 * n_personas;
+                document.getElementById("resultado").innerHTML = total + " € ";
+            } 
+            
+            //Origen Málaga
+            if (document.form.origen[1].checked && document.form.destino[0].checked ||      document.form.origen[1].checked && document.form.destino[1].checked) {
+                total = 90 * n_personas;
+                document.getElementById("resultado").innerHTML = total + " € ";
+            } else if (document.form.origen[1].checked && document.form.destino[2].checked) {
+                total = 60 * n_personas;
+                document.getElementById("resultado").innerHTML = total + " € ";
+            }
+
+             //Origen Jerez
+            if (document.form.origen[2].checked && document.form.destino[1].checked ||      document.form.origen[2].checked && document.form.destino[2].checked) {
+                total = 90 * n_personas;
+                document.getElementById("resultado").innerHTML = total + " € ";
+            } else if (document.form.origen[2].checked && document.form.destino[0].checked) {
+                total = 60 * n_personas;
+                document.getElementById("resultado").innerHTML = total + " € ";
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <form name="form">
+        <div class="wrap">
+            <div class="titulo">
+                Vuelos Monroy
+            </div>
+            <div class="origen_destino">
+                <div class="ori_des" name="origen">
+                    <span class="cabecera">Origen</span>
+                    <br>
+                    <input type="radio" name="origen"/>Sevilla
+                    <br>
+                    <input type="radio" name="origen" />Málaga
+                    <br>
+                    <input type="radio" name="origen"/>Jerez de la Frontera
+                </div>
+                <div class="ori_des" name="destino">
+                    <span class="cabecera">Destino</span>
+                    <br>
+                    <input type="radio" name="destino"/>Frankfurt
+                    <br>
+                    <input type="radio" name="destino"/>Milán
+                    <br>
+                    <input type="radio" name="destino"/>Londres
+                </div>
+            </div>
+            <div class="n_personas">
+                Nº de personas :
+                <select id="n_personas" name="n_personas">
+                    <option value="">--Seleccionar--</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+                <input type="button" value="Calcular" onClick="calcular()">
+                <br>
+            </div>
+            <div class="total">
+                <span class="cabecera">Total:</span>
+                <span class="calculo" name="calculo" id="resultado"> 0€ </span>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

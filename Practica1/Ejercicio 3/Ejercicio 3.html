@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 3</title>
+
+    <style>
+
+      body {
+        background-color: rgb(255, 163, 42);
+      }
+
+      .titulo1 {
+        font-size: xx-large;
+        color: orange;
+        background-color: white;
+        border: 5px solid orangered;
+        border-left: none;
+        border-right: none;
+      }
+
+      .titulo2 {
+        font-size: large;
+        color: white;
+        background-color: orangered;
+      }
+
+      .container {
+        width: 450px;
+        height: 500px;
+        background-color: white;
+        margin: 1em;
+        float: left;
+        text-align: left;
+
+      }
+      .autor {
+        float: right;
+      }
+
+      img {
+        margin: 3px;
+        border: 3px solid orangered;
+        border-left: none;
+        border-right: none;
+      }
+
+      #img1 {
+        position: relative;
+        float: right;
+        width: 300px;
+        height: auto;
+      }
+
+      #img2 {
+        width: 300px;
+        height: auto;
+        float: left;
+      }
+
+      #img3 {
+        width: 300px;
+        height: auto;
+        position: relative;
+        left: 65px;
+      }
+
+      .parrafo1 {
+        width: 160px;
+        text-align: justify;
+        margin: 3px;
+      }
+
+      .parrafo2 {
+        text-align: justify;
+        float: left;
+        position: relative;
+        margin: 5px;
+      }
+
+      .parrafo3 {
+        text-align: justify;
+        margin: 5px;
+        align-items: center;
+      }
+
+      #container3 {
+        overflow: scroll;
+      }
+
+      .rojo {
+        font-size: 25px;
+        color: red;
+        word-spacing: 3px;
+        font-weight: bold;
+      }
+
+      .autor {
+        position: absolute;
+        top: 13px;
+        right: 40px;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+<div class="titulo1">Escritorio vs móviles</div>
+
+<div class="container">
+  <div class="titulo2">Los móviles, el nuevo ordenador</div>
+
+  <img id="img1" src="gartner.png"/>
+  <div class="parrafo1">
+    La segunda década del siglo XXI está siendo la década de la informática móvil y el protagonista principal está siendo el smartphone, el teléfono móvil inteligente.
+    <br>
+    Las ventas anuales mundiales de los últimos años y las previsiones para los próximos años publicados por la consultora <b>Gartner</b> explican claramente porque los móviles son cada vez más importantes frente a los PCs.
+  </div>
+</div>
+<div class="container">
+  <div class="titulo2">El acceso a la web</div>
+  <div class="parrafo2">
+       <div> El cambio de una informática de escritorio a una informática móvil se refleja en las estadísticas de visitas a los sitios web. Según la empresa <b>NetMarketShare</b>, casi <span class="rojo">uno de cada tres usuarios</span> accederían ya a la web desde un dispositivo móvil.</div>
+       <br>
+       <img id="img2" src="netapplications.png"/>
+    
+      <div>Dada la dificultad de recopilar este tipo de información, lo importante en este gráfico es la tendencia, más que los valores en sí.</div>
+    </div>
+</div>
+<div id="container3" class="container">
+  <div class="titulo2">Los datos de Wikipedia</div>
+  <div class="parrafo3">
+    Desde mayo de 2015, <b>Wikimedia</b> publica en <a href="https://analytics.wikimedia.org/ ">https://analytics.wikimedia.org/ </a>estadísticas muy detalladas de sus logs de acceso. En el caso de las webs de Wikimedia, durante el último año <span class="rojo">la mitad de las visitas</span> se producen desde ordenadores de escritorio y la otra mitad desde dispositivos móviles, aunque por tratarse de un período muy corto (un año), es difícil detectar tendencias en este gráfico.
+  </div>
+  <br>
+  <img id="img3" src="wikimedia.png"/>
+</div>
+
+<div class="autor">
+  Autor: Barto
+  <br>
+  Fecha: 28/06/16
+</div>
+</body>
+</html>
